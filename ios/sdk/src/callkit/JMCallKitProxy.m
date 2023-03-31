@@ -19,53 +19,53 @@
 #import "JMCallKitEmitter.h"
 
 #pragma mark -
-@interface CXProvider(CXProviderProtocol) <CXProviderProtocol>
-@end
-
-@implementation CXProvider(CXProviderProtocol)
-@end
+//@interface CXProvider(CXProviderProtocol) <CXProviderProtocol>
+//@end
+//
+//@implementation CXProvider(CXProviderProtocol)
+//@end
 
 #pragma mark -
-@interface CXCallController(CXCallControllerProtocol) <CXCallControllerProtocol>
+//@interface CXCallController(CXCallControllerProtocol) <CXCallControllerProtocol>
+//
+//@property (nonatomic, readonly) NSArray<CXCall*> *calls;
+//
+//@end
 
-@property (nonatomic, readonly) NSArray<CXCall*> *calls;
-
-@end
-
-@implementation CXCallController(CXCallControllerProtocol)
-
-@dynamic calls;
-
-- (NSArray<CXCall*> *)calls {
-    return self.callObserver.calls;
-}
-
-@end
+//@implementation CXCallController(CXCallControllerProtocol)
+//
+//@dynamic calls;
+//
+//- (NSArray<CXCall*> *)calls {
+//    return self.callObserver.calls;
+//}
+//
+//@end
 
 #pragma mark -
 @interface JMCallKitProxy ()
     
-@property (class) CXProvider *defaultProvider;
-@property (class) CXProviderConfiguration *providerConfiguration;
+//@property (class) CXProvider *defaultProvider;
+//@property (class) CXProviderConfiguration *providerConfiguration;
 
 @end
 
 @interface JMCallKitProxy (Helpers)
 
-+ (CXCallUpdate *)makeCXUpdateWithHandle:(nullable NSString *)handle displayName:(nullable NSString *)displayName hasVideo:(BOOL)hasVideo;
+//+ (CXCallUpdate *)makeCXUpdateWithHandle:(nullable NSString *)handle displayName:(nullable NSString *)displayName hasVideo:(BOOL)hasVideo;
 
 @end
 
 @implementation JMCallKitProxy
 
 @dynamic callKitProvider, callKitCallController, enabled;
-@dynamic defaultProvider, providerConfiguration;
+//@dynamic defaultProvider, providerConfiguration;
 
 static id<CXProviderProtocol> _callKitProvider = nil;
 static id<CXCallControllerProtocol> _callKitCallController = nil;
 static BOOL _enabled = false;
-static CXProvider *_defaultProvider = nil;
-static CXProviderConfiguration *_providerConfiguration = nil;
+//static CXProvider *_defaultProvider = nil;
+//static CXProviderConfiguration *_providerConfiguration = nil;
 
 #pragma mark CallJit proxy
 
@@ -96,31 +96,31 @@ static CXProviderConfiguration *_providerConfiguration = nil;
 + (void)setEnabled:(BOOL)enabled {
     _enabled = enabled ;
     
-    if (!self.callKitProvider) {
-        [self.provider invalidate];
-    }
-    
-    if (enabled) {
-        CXProviderConfiguration *configuration = self.providerConfiguration? self.providerConfiguration : [[CXProviderConfiguration alloc] initWithLocalizedName:@""];
-        if (!self.callKitProvider) {
-            self.defaultProvider = [[CXProvider alloc] initWithConfiguration: configuration];
-        }
-        
-        [self.provider setDelegate:self.emitter queue:nil];
-    } else {
-        [self.provider setDelegate:nil queue:nil];
-    }
+//    if (!self.callKitProvider) {
+//        [self.provider invalidate];
+//    }
+//
+//    if (enabled) {
+//        CXProviderConfiguration *configuration = self.providerConfiguration? self.providerConfiguration : [[CXProviderConfiguration alloc] initWithLocalizedName:@""];
+//        if (!self.callKitProvider) {
+//            self.defaultProvider = [[CXProvider alloc] initWithConfiguration: configuration];
+//        }
+//
+//        [self.provider setDelegate:self.emitter queue:nil];
+//    } else {
+//        [self.provider setDelegate:nil queue:nil];
+//    }
 }
 
-+ (CXProvider *)defaultProvider {
-    return _defaultProvider;
-}
-
-+ (void)setDefaultProvider:(CXProvider *)defaultProvider {
-    if (_defaultProvider != defaultProvider) {
-        _defaultProvider = defaultProvider;
-    }
-}
+//+ (CXProvider *)defaultProvider {
+//    return _defaultProvider;
+//}
+//
+//+ (void)setDefaultProvider:(CXProvider *)defaultProvider {
+//    if (_defaultProvider != defaultProvider) {
+//        _defaultProvider = defaultProvider;
+//    }
+//}
 
 + (id<CXProviderProtocol>)provider {
     return self.callKitProvider != nil ? self.callKitProvider : self.defaultProvider;
@@ -130,30 +130,30 @@ static CXProviderConfiguration *_providerConfiguration = nil;
     return self.callKitCallController != nil ? self.callKitCallController : self.defaultCallController;
 }
 
-+ (CXProviderConfiguration *)providerConfiguration {
-    return _providerConfiguration;
-}
+//+ (CXProviderConfiguration *)providerConfiguration {
+//    return _providerConfiguration;
+//}
+//
+//+ (void)setProviderConfiguration:(CXProviderConfiguration *)providerConfiguration {
+//    if (_providerConfiguration != providerConfiguration) {
+//        _providerConfiguration = providerConfiguration;
+//
+//        if (providerConfiguration) {
+//            self.provider.configuration = providerConfiguration;
+//            [self.provider setDelegate:self.emitter queue:nil];
+//        }
+//    }
+//}
 
-+ (void)setProviderConfiguration:(CXProviderConfiguration *)providerConfiguration {
-    if (_providerConfiguration != providerConfiguration) {
-        _providerConfiguration = providerConfiguration;
-        
-        if (providerConfiguration) {
-            self.provider.configuration = providerConfiguration;
-            [self.provider setDelegate:self.emitter queue:nil];
-        }
-    }
-}
-
-+ (CXCallController *)defaultCallController {
-    static dispatch_once_t once;
-    static CXCallController *defaultCallController;
-    dispatch_once(&once, ^{
-        defaultCallController = [[CXCallController alloc] init];
-    });
-    
-    return defaultCallController;
-}
+//+ (CXCallController *)defaultCallController {
+//    static dispatch_once_t once;
+//    static CXCallController *defaultCallController;
+//    dispatch_once(&once, ^{
+//        defaultCallController = [[CXCallController alloc] init];
+//    });
+//
+//    return defaultCallController;
+//}
 
 + (JMCallKitEmitter *)emitter {
     static dispatch_once_t once;
@@ -172,19 +172,20 @@ static CXProviderConfiguration *_providerConfiguration = nil;
         return;
     }
     
-    CXProviderConfiguration *configuration = [[CXProviderConfiguration alloc] initWithLocalizedName:localizedName];
-    configuration.iconTemplateImageData = imageData;
-    configuration.maximumCallGroups = 1;
-    configuration.maximumCallsPerCallGroup = 1;
-    configuration.ringtoneSound = ringtoneSound;
-    configuration.supportedHandleTypes = [NSSet setWithArray:@[@(CXHandleTypeGeneric)]];
-    configuration.supportsVideo = true;
-    
-    self.providerConfiguration = configuration;
+//    CXProviderConfiguration *configuration = [[CXProviderConfiguration alloc] initWithLocalizedName:localizedName];
+//    configuration.iconTemplateImageData = imageData;
+//    configuration.maximumCallGroups = 1;
+//    configuration.maximumCallsPerCallGroup = 1;
+//    configuration.ringtoneSound = ringtoneSound;
+//    configuration.supportedHandleTypes = [NSSet setWithArray:@[@(CXHandleTypeGeneric)]];
+//    configuration.supportsVideo = true;
+//
+//    self.providerConfiguration = configuration;
 }
 
 + (BOOL)isProviderConfigured {
-    return self.providerConfiguration != nil;
+//    return self.providerConfiguration != nil;
+    return NO;
 }
 
 + (void)addListener:(nonnull id<JMCallKitListener>)listener {
@@ -231,11 +232,11 @@ static CXProviderConfiguration *_providerConfiguration = nil;
     [self.provider reportCallWithUUID:uuid updated:callUpdate];
 }
 
-+ (void)reportCallWith:(nonnull NSUUID *)uuid
-               endedAt:(nullable NSDate *)dateEnded
-                reason:(CXCallEndedReason)endedReason {
-    [self.provider reportCallWithUUID:uuid endedAtDate:dateEnded reason:endedReason];
-}
+//+ (void)reportCallWith:(nonnull NSUUID *)uuid
+//               endedAt:(nullable NSDate *)dateEnded
+//                reason:(CXCallEndedReason)endedReason {
+//    [self.provider reportCallWithUUID:uuid endedAtDate:dateEnded reason:endedReason];
+//}
 
 + (void)reportOutgoingCallWith:(nonnull NSUUID *)uuid startedConnectingAt:(nullable NSDate *)dateStartedConnecting {
     [self.provider reportOutgoingCallWithUUID:uuid startedConnectingAtDate:dateStartedConnecting];
@@ -245,23 +246,23 @@ static CXProviderConfiguration *_providerConfiguration = nil;
     [self.provider reportOutgoingCallWithUUID:uuid connectedAtDate:dateConnected];
 }
 
-+ (void)request:(nonnull CXTransaction *)transaction completion:(nonnull void (^)(NSError *_Nullable))completion {
-    if (!self.enabled) {
-        return;
-    }
-    
-    // XXX keep track of muted actions to avoid "ping-pong"ing. See
-    // JMCallKitEmitter for details on the CXSetMutedCallAction handling.
-    for (CXAction *action in transaction.actions) {
-        if ([action isKindOfClass:[CXSetMutedCallAction class]]) {
-            [self.emitter addMuteAction:action.UUID];
-        }
-    }
-    
-    [self.callController requestTransaction:transaction completion:completion];
-}
-
-@end
+//+ (void)request:(nonnull CXTransaction *)transaction completion:(nonnull void (^)(NSError *_Nullable))completion {
+//    if (!self.enabled) {
+//        return;
+//    }
+//
+//    // XXX keep track of muted actions to avoid "ping-pong"ing. See
+//    // JMCallKitEmitter for details on the CXSetMutedCallAction handling.
+//    for (CXAction *action in transaction.actions) {
+//        if ([action isKindOfClass:[CXSetMutedCallAction class]]) {
+//            [self.emitter addMuteAction:action.UUID];
+//        }
+//    }
+//
+//    [self.callController requestTransaction:transaction completion:completion];
+//}
+//
+//@end
 
 @implementation JMCallKitProxy (Helpers)
 

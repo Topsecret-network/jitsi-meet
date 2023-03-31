@@ -16,7 +16,7 @@
  */
 
 #import <AVKit/AVKit.h>
-#import <CallKit/CallKit.h>
+//#import <CallKit/CallKit.h>
 #import <Foundation/Foundation.h>
 
 @protocol JMCallKitListener <NSObject>
@@ -29,6 +29,6 @@
 - (void)performStartCallWithUUID:(nonnull NSUUID *)UUID isVideo:(BOOL)isVideo;
 - (void)providerDidActivateAudioSessionWithSession:(nonnull AVAudioSession *)session;
 - (void)providerDidDeactivateAudioSessionWithSession:(nonnull AVAudioSession *)session;
-- (void)providerTimedOutPerformingActionWithAction:(nonnull CXAction *)action;
+//- (void)providerTimedOutPerformingActionWithAction:(nonnull CXAction *)action;
 
 @end

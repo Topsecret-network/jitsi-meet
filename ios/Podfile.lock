@@ -700,7 +700,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Amplitude: 834c7332dfb9640a751e21c13efb22a07c0c12d4
-  amplitude-react-native: 0ed8cab759aafaa94961b82122bf56297da607ad
+  amplitude-react-native: 68ea115c6e5677512abd459dae20d6f924a4e4de
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
@@ -716,7 +716,7 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 40bd9054049b2eae9a2c38ef1c3dd213df3605cd
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   Giphy: b6d5087521d251bb8c99cdc0eb07bbdf86d142d5
-  giphy-react-native-sdk: 7abccf2b52123a0f30ce99da895ab6288023680c
+  giphy-react-native-sdk: 7f7196a7adcdcc72b9ad6b50e81a875881131255
   glog: 476ee3e89abb49e07f822b48323c51c57124b572
   GoogleAppMeasurement: 4c19f031220c72464d460c9daa1fb5d1acce958e
   GoogleDataTransport: 5fffe35792f8b96ec8d6775f5eccd83c998d5a3b
@@ -743,19 +743,19 @@ SPEC CHECKSUMS:
   React-jsiexecutor: b4ce4afc5dd9c8fdd2ac59049ccf420f288ecef7
   React-jsinspector: e396d5e56af08fce39f50571726b68a40f1e302d
   React-logger: cec52b3f8fb0be0d47b2cb75dec69de60f2de3b6
-  react-native-background-timer: 17ea5e06803401a379ebf1f20505b793ac44d0fe
+  react-native-background-timer: 117fffdc9b0d6f144444bb49029f94275a45fdb5
   react-native-get-random-values: 30b3f74ca34e30e2e480de48e4add2706a40ac8f
-  react-native-keep-awake: afad8a51dfef9fe9655a6344771be32c8596d774
-  react-native-netinfo: 27f287f2d191693f3b9d01a4273137fcf91c3b5d
+  react-native-keep-awake: eba3137546b10003361b37c761f6c429b59814ae
+  react-native-netinfo: 1792d13894f12e8050c6cd7207192c74025e90d1
   react-native-orientation-locker: 851f6510d8046ea2f14aa169b1e01fcd309a94ba
-  react-native-pager-view: 3ee7d4c7697fb3ef788346e834a60cca97ed8540
-  react-native-performance: f4b6604a9d5a8a7407e34a82fab6c641d9a3ec12
-  react-native-safe-area-context: 99b24a0c5acd0d5dcac2b1a7f18c49ea317be99a
-  react-native-slider: 6e9b86e76cce4b9e35b3403193a6432ed07e0c81
+  react-native-pager-view: 311c10a4eead1be627cad59062aa059d8108b943
+  react-native-performance: 7060cb5011e52ab924a07ff1628eed390bb9293b
+  react-native-safe-area-context: ec0d85aca8110dae9327430a9541fec165352dab
+  react-native-slider: b0b4c575507df69bc8ceb307eaad0a8f89455a8e
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
-  react-native-video: bb6f12a7198db53b261fefb5d609dc77417acc8b
+  react-native-video: 95f00146c09ae9d1fb5bb9c610b23fdd402f0c2b
   react-native-webrtc: 0df36747802476e758af6b6dceccdeaed8c826c2
-  react-native-webview: ea4899a1056c782afa96dd082179a66cbebf5504
+  react-native-webview: 6ff12d99d519224fade77d1569e31f2762f33f9f
   React-perflogger: 46620fc6d1c3157b60ed28434e08f7fd7f3f3353
   React-RCTActionSheet: b1f7e72a0ba760ec684df335c61f730b5179f5ff
   React-RCTAnimation: d73b62d42867ab608dfb10e100d8b91106275b18
@@ -768,15 +768,15 @@ SPEC CHECKSUMS:
   React-RCTVibration: be5f18ffc644f96f904e0e673ab639ca5d673ee8
   React-runtimeexecutor: d5498cfb7059bf8397b6416db4777843f3f4c1e7
   ReactCommon: 1974dab5108c79b40199f12a4833d2499b9f6303
-  RNCalendarEvents: 7e65eb4a94f53c1744d1e275f7fafcfaa619f7a3
-  RNCAsyncStorage: 005c0e2f09575360f142d0d1f1f15e4ec575b1af
-  RNCClipboard: 41d8d918092ae8e676f18adada19104fa3e68495
-  RNDefaultPreference: 08bdb06cfa9188d5da97d4642dac745218d7fb31
-  RNDeviceInfo: 0400a6d0c94186d1120c3cbd97b23abc022187a9
+  RNCalendarEvents: 99a07d9a74a62b5b423d8c9df04dc0b8f8b94faf
+  RNCAsyncStorage: bef53cb70c06b8eff11bab4a848de86ad4488c39
+  RNCClipboard: 5e299c6df8e0c98f3d7416b86ae563d3a9f768a3
+  RNDefaultPreference: dc356c8dc839f47e4289ef72a07ccd768dde9d30
+  RNDeviceInfo: 417b2ef4456c13a9d50ad8c57895eea837b735a8
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
-  RNGoogleSignin: c4381751eefd73c552b923ba347a9bfc6f18771c
+  RNGoogleSignin: aeb29e549e6748da3e5847516fdd1327c85894c5
   RNScreens: 40a2cb40a02a609938137a1e0acfbf8fc9eebf19
-  RNSound: 27e8268bdb0a1f191f219a33267f7e0445e8d62f
+  RNSound: 9253013eeaa051eab63d354fd4654f7aa67c82f0
   RNSVG: f3b60aeeaa81960e2e0536c3a9eef50b667ef3a9
   RNWatch: dae6c858a2051dbdcfb00b9a86cf4d90400263b4
   Yoga: 7929b92b1828675c1bebeb114dae8cb8fa7ef6a3
